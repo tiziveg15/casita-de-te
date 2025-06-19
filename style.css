@@ -1,14 +1,21 @@
+/* ====== Estilos base ====== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Georgia', serif;
   background: #fdf6f0;
   color: #3e2c2c;
+  line-height: 1.6;
 }
 
+/* ====== Encabezado ====== */
 header {
   background: #8c5e3c;
   color: white;
-  padding: 2rem;
+  padding: 2rem 1rem;
   text-align: center;
 }
 
@@ -22,6 +29,7 @@ header p {
   font-style: italic;
 }
 
+/* ====== Navegación ====== */
 nav {
   background: #e6d3c4;
   padding: 1rem;
@@ -33,12 +41,14 @@ nav a {
   text-decoration: none;
   color: #5c3b28;
   font-weight: bold;
+  font-size: 1rem;
 }
 
+/* ====== Contenido principal ====== */
 .container {
   max-width: 900px;
   margin: auto;
-  padding: 2rem;
+  padding: 2rem 1rem;
 }
 
 .post {
@@ -46,7 +56,7 @@ nav a {
   margin-bottom: 2rem;
   padding: 1.5rem;
   border-left: 6px solid #cfa88f;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .post h2 {
@@ -58,6 +68,7 @@ nav a {
   line-height: 1.6;
 }
 
+/* ====== Pie de página ====== */
 footer {
   background: #8c5e3c;
   color: white;
@@ -65,17 +76,86 @@ footer {
   padding: 1rem;
   margin-top: 3rem;
 }
-.imagen-libre {
+
+/* ====== Imágenes posicionadas ====== */
+.taza-de-té,
+.flor {
   position: absolute;
-  top: 0px;     /* distancia desde arriba */
-  left: 1000px;    /* distancia desde la izquierda */
-  width: 150px;   /* tamaño opcional */
+  width: 150px;
 }
 
-.flor  {
-    position: absolute;
-    top: 0px;     /* distancia desde arriba */
-    left: 200px;    /* distancia desde la izquierda */
-    width: 150px;   /* tamaño opcional */
-    height: 150px;
+.taza-de-té {
+  top: 20px;
+  left: 1000px;
+}
+
+.flor {
+  top: 0px;
+  left: 200px;
+  height: 150px;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1024px) {
+  .taza-de-té {
+    left: auto;
+    right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    padding: 0.5rem;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 0.5rem 0.8rem;
+    font-size: 1rem;
+  }
+
+  .post {
+    padding: 1rem;
+  }
+
+  .taza-de-té,
+  .flor {
+    display: none; /* Oculta imágenes decorativas en pantallas medianas */
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.3rem 0;
+  }
+
+  .container {
+    padding: 1rem 0.5rem;
+  }
+
+  .post h2 {
+    font-size: 1.25rem;
+  }
+
+  .post p {
+    font-size: 1rem;
+  }
+
+  .taza-de-té,
+  .flor {
+    display: none;
+  }
 }
