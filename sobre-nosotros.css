@@ -27,22 +27,6 @@ header p {
   font-style: italic;
 }
 
-.taza-de-te,
-.flor {
-  position: absolute;
-  width: 80px;
-}
-
-.taza-de-te {
-  top: 20px;
-  right: 20px;
-}
-
-.flor {
-  top: 0;
-  left: 20px;
-}
-
 nav {
   background: #e6d3c4;
   padding: 1rem;
@@ -67,32 +51,72 @@ nav a:hover {
   color: white;
 }
 
-.container {
-  max-width: 900px;
+main {
+  max-width: 1000px;
   margin: auto;
   padding: 2rem 1rem;
 }
 
-.post {
+.descripcion,
+.extras,
+.ubicacion {
   background: white;
-  margin-bottom: 2rem;
   padding: 1.5rem;
   border-left: 6px solid #cfa88f;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
   border-radius: 10px;
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease;
 }
 
-.post.visible {
+.descripcion.visible,
+.extras.visible,
+.ubicacion.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.post h2 {
+.descripcion h2,
+.extras h3,
+.ubicacion h3 {
   color: #8c5e3c;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.envios {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.extras ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.extras ul li::before {
+  content: '🌸';
+  margin-right: 0.5rem;
+}
+
+.mapas {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.mapas iframe {
+  flex: 1 1 300px;
+  height: 300px;
+  border: none;
+  border-radius: 8px;
+  min-width: 280px;
+  max-width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer {
@@ -100,7 +124,23 @@ footer {
   color: white;
   text-align: center;
   padding: 1rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
+}
+
+.taza-de-te,
+.flor {
+  position: absolute;
+  width: 80px;
+}
+
+.taza-de-te {
+  top: 20px;
+  right: 20px;
+}
+
+.flor {
+  top: 0;
+  left: 20px;
 }
 
 @media (max-width: 600px) {
@@ -110,19 +150,13 @@ footer {
 
   nav {
     flex-direction: column;
-    gap: 0.5rem;
   }
 
-  .container {
-    padding: 1rem;
+  .mapas {
+    flex-direction: column;
   }
 
-  .taza-de-te,
-  .flor {
-    display: none;
-  }
-
-  .post {
-    padding: 1rem;
+  .mapas iframe {
+    height: 250px;
   }
 }
